@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "VerDetalleDeportista";
+}
+
+<div class="text-center">
+
+
+    <div class="card" style="width: 18rem;">
+        <img src="@ViewBag.deportistas.foto" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">@ViewBag.deportistas.nombre</h5>
+            <h5 class="card-title">@ViewBag.deportistas.apellido</h5>
+            <a href='@Url.Action("VerDetalleDeporte","Home", new {idDeporte = ViewBag.deportistas.idDeporte})' class="btn btn-primary">DEPORTE</a>
+            <a href='@Url.Action("VerDetallePais","Home", new {idPais = ViewBag.deportistas.idPais})' class="btn btn-primary">PAIS</a>
+        </div>
+    </div>
+
+
+
+</div>

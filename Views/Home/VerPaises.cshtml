@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "VerPaises";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Paises disponibles:</h1>
+
+    @foreach (Paises item in ViewBag.listaPaises)
+    {
+    <div class="card" style="width: 18rem;">
+        <img src="@item.bandera" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">@item.nombre</h5>
+            <p class="card-text">FECHA DE FUNDACION: @item.fechaFundacion</p>
+            <a href='@Url.Action("VerDetallePais","Home", new {idPais = item.idPais})' class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    }
+
+</div>
