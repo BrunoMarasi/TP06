@@ -21,3 +21,42 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+
+.creadores {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.row {
+  gap: 1rem;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.container-form form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.container-form form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container-detalleDeporte {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 5px;
+}

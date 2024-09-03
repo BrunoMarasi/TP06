@@ -58,5 +58,25 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult AgregarDeportista(){
+
+        ViewBag.listaDeportes = BD.listarDeportes();
+        ViewBag.listaPaises = BD.listarPaises();
+        return View();
+
+    }
+    [HttpPost] 
+    public IActionResult GuardarDeportista(Deportistas dep){
+        BD.AgregarDeportista(dep);
+        return RedirectToAction("Index");  
+    }
+
+    public IActionResult EliminarDeportista (int idCandidato) {
+        BD.EliminarDeportista(idCandidato);
+        return RedirectToAction("Index");
+    }
+
+
+
 
 }

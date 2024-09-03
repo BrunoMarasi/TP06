@@ -3,17 +3,24 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Lista de Deportes disponibles:</h1>
+    <h1 class="display-4">DEPORTES:</h1>
 
-    @foreach (Deportes item in ViewBag.listaDeportes)
-    {
-    <div class="card" style="width: 18rem;">
-        <img src="@item.foto" class="card-img-top">
-        <div class="card-body">
-            <h5 class="card-title">@item.nombre</h5>
-            <a href='@Url.Action("VerDetalleDeporte","Home", new {idDeporte = item.idDeporte})' class="btn btn-primary">Go somewhere</a>
+<div class= container>
+<div class="row">
+
+        @foreach (Deportes item in ViewBag.listaDeportes)
+        {
+        <div class="card" style="width: 18rem;">
+            <img src="@item.foto" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">@item.nombre</h5>
+                <a href='@Url.Action("VerDetalleDeporte","Home", new {idDeporte = item.idDeporte})' class="btn btn-primary">DETALLES</a>
+            </div>
         </div>
-    </div>
-    }
+        }
+
+</div>
+</div>
+
 
 </div>

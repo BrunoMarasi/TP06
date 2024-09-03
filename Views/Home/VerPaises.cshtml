@@ -3,7 +3,10 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Lista de Paises disponibles:</h1>
+    <h1 class="display-4">PAISES:</h1>
+
+<div class= container>
+<div class="row">
 
     @foreach (Paises item in ViewBag.listaPaises)
     {
@@ -12,9 +15,11 @@
         <div class="card-body">
             <h5 class="card-title">@item.nombre</h5>
             <p class="card-text">FECHA DE FUNDACION: @item.fechaFundacion</p>
-            <a href='@Url.Action("VerDetallePais","Home", new {idPais = item.idPais})' class="btn btn-primary">Go somewhere</a>
+            <a href='@Url.Action("VerDetallePais","Home", new {idPais = item.idPais})' class="btn btn-primary">DETALLES</a>
         </div>
     </div>
     }
+</div>
+</div>
 
 </div>

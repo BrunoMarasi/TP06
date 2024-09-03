@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "AgregarDeportista";
+}
+
+<div class="container-form">
+    <form action='@Url.Action("GuardarDeportista", "Home")' method="Post">
+    <fieldset>
+        <label> APELLIDO:
+            <input type="text" name="apellido" required minlenght="3" placeholder="Apellidos" required>
+        </label>
+        <label> NOMBRE:
+            <input type="text" name="nombre" required minlenght="3" placeholder="Nombres" required>
+        </label>
+        <label> FECHA DE NACIMIENTO:
+            <input type="date" name="fechaNacimiento" required>
+        </label>
+        <label> FOTO:
+            <input type="text" name="foto" placeholder="URL" required>
+        </label>
+        <label> PAIS:
+            <select name="idPais">
+                @foreach(Paises item in ViewBag.listaPaises) {
+                    <option value="@item.idPais">@item.nombre</option>
+                }
+            </select>
+        </label>
+        <label> DEPORTE:
+            <select name="idDeporte">
+                @foreach(Deportes item in ViewBag.listaDeportes) {
+                    <option value="@item.idDeporte">@item.nombre</option>
+                }
+            </select>
+        </label>
+    </fieldset>
+        <input type ="submit">
+    </form>
+    </div>

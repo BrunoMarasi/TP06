@@ -10,9 +10,9 @@ public class BD
     //a//
     public static void AgregarDeportista(Deportistas dep)
     {
-        string sql = "INSERT INTO Deportistas(idDeportista,apellido,nombre, fechaNacimiento, foto, idPais, idDeporte)";
+        string sql = "INSERT INTO Deportistas(apellido,nombre, fechaNacimiento, foto, idPais, idDeporte) VALUES (@papellido, @pnombre, @pfechaNacimiento, @pfoto, @pidPais, @pidDeporte)";
         using(SqlConnection conn = new SqlConnection(_ConnectionString)) {
-            conn.Execute(sql, new {pidDeportista = dep.idDeportista, papellido = dep.apellido, pnombre = dep.nombre, pfechaNacimiento = dep.fechaNacimiento, pfoto = dep.foto, pidPais = dep.idPais, pidDeporte = dep.idDeporte});
+            conn.Execute(sql, new {papellido = dep.apellido, pnombre = dep.nombre, pfechaNacimiento = dep.fechaNacimiento, pfoto = dep.foto, pidPais = dep.idPais, pidDeporte = dep.idDeporte});
         }
     }
 
